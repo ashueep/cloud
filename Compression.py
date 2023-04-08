@@ -1,14 +1,15 @@
 class Compression:
-    def __init__(self, s: int, f: int, b: int):
-        self.s = s
-        self.f = f
-        self.b = b
-
+    def __init__(self, d, gamma, mu):
         # calculates compressed data
-        self.d = s * f * b
+        self.d = d
+        self.gamma = gamma
+        self.mu = mu
 
     def get_compressed_data_size(self):
-        return self.d
+        return self.d * self.gamma
+    
+    def get_decompression_data_size(self):
+        return self.d * self.gamma * self.mu
 
     def calc_compression_energy(self, time, processor):
 

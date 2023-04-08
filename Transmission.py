@@ -10,9 +10,9 @@ class Radio:
         self.prx = snr * b * B * (N_0/2) * nf 
         self.ptx = (((4 * 3.141592 * self.fc) / self.c) ** 2) * (d ** n) * (self.prx / (gr * gt))
 
-    def calculate_radio_energy(self, mu, gamma, lamda, data):
-        t_tx = mu * lamda * data/ (2 * self.B)
-        t_rx = mu * gamma * lamda * data/ (2 * self.B)
+    def calculate_radio_energy(self, mu, data):
+        t_tx = data/ (2 * self.B)
+        t_rx = mu * data/ (2 * self.B)
         energy = (self.ptx * t_tx + self.prx * t_rx)/ data
 
         return energy
