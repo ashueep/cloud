@@ -18,17 +18,17 @@ class MobileDevice:
 
         # offloaded data compression/decompression energy
         compression_off = Compression(d = offload_data, gamma = self.gamma, mu = self.mu)
-        compress_off_e = compression_off.calc_compression_energy(time = 3, processor = 100)
-        # compressed_off_d = compression.get_compressed_data_size()
+        compress_off_e = compression_off.calc_compression_energy(time = 1, processor = 2.4 * 10**9)
+        compressed_off_d = compression_off.get_compressed_data_size()
 
         # local data compute energy
         local = LocalCompute(local_data, k = 2)
         compress_local = Compression(d = local_data, gamma = self.gamma, mu = self.mu)
-        local_e = local.calc_local_energy(compressed_e=compress_local.calc_compression_energy(3, 100))
+        local_e = local.calc_local_energy(compressed_e=compress_local.calc_compression_energy(time = 1, processor = 2.4 * 10**9))
 
         # offloaded data radio transmission/recieve energy
-        radio = Radio(0.1, 0.2, 0.3, 4, 0.3, 20, 3, 0.4, 0.5)
-        radio_e = radio.calculate_radio_energy(self.mu, compress_off_e)
+        radio = Radio()
+        radio_e = radio.calculate_radio_energy(self.mu, compressed_off_d)
 
         total_e = radio_e + compress_off_e + local_e
 
@@ -38,10 +38,10 @@ class MobileDevice:
 
 
 
-data = Data(1000, 500, 40)
+data = Data(s = 1280 * 720, f = 600, b = 12)
 
-for i in range(10):
-    lamda = (i + 1)/10
+for i in range(999):
+    lamda = (i + 1)/1000
     device = MobileDevice(lamda, 1.4, 0.6, data)
-    print(device.total_energy())
+    print("%.4f %f" % (lamda, device.total_energy()))
 
