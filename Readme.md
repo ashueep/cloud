@@ -20,6 +20,9 @@ by **Sonali Chouhan** of Department of Electronics and Electrical Engineering of
 * energy.plot
 * energy.png
 
+## Energy Plot 
+### ![alt text](https://github.com/ashueep/cloud/blob/main/energy.png?raw=true)
+
 ## To run code
 
 `python3 MobileDevice.py > energy.dat`
