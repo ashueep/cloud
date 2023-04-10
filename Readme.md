@@ -19,9 +19,14 @@ by **Sonali Chouhan** of Department of Electronics and Electrical Engineering of
 * energy.dat
 * energy.plot
 * energy.png
+* Parameters_For_Simulations.PNG
+
 
 ## Energy Plot 
 ### ![alt text](https://github.com/ashueep/cloud/blob/main/energy.png?raw=true)
+
+## Simulation Parameters Table
+### ![alt text](https://github.com/ashueep/cloud/blob/main/Parameters_For_Simulations.PNG?raw=true)
 
 ## To run code
 
