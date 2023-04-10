@@ -19,3 +19,13 @@ by **Sonali Chouhan** of Department of Electronics and Electrical Engineering of
 * energy.dat
 * energy.plot
 * energy.png
+
+## To run code
+
+`python3 MobileDevice.py > energy.dat`
+
+To obtain graph run
+
+`gnuplot -c energy.plot`
+
+Graph Output is stored in <src img="./energy.png">
