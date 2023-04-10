@@ -28,4 +28,6 @@ To obtain graph run
 
 `gnuplot -c energy.plot`
 
-Graph Output is stored in <src img="./energy.png">
+Graph Output is stored in `./energy.png` 
+
+<src img="./energy.png">
